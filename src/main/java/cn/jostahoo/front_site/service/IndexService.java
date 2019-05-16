@@ -3,9 +3,12 @@ package cn.jostahoo.front_site.service;
 import cn.jostahoo.front_site.domain.*;
 
 import java.util.List;
+import java.util.Map;
 
 public interface IndexService {
 
+
+   public Map<String,Object> getShouyeInfos();
     //首页滚动
     public List<Subtitle> getSliderInfo();
 
