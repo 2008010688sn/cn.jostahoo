@@ -19,7 +19,6 @@ public class OxygenIons implements Serializable {
     @Column
     String title;
 
-    @Column(name = "pcurl")
     String pcUrl;
 
 

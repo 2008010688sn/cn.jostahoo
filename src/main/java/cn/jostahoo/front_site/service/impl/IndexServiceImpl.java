@@ -46,6 +46,15 @@ public class IndexServiceImpl implements IndexService {
     @Autowired
     CooperativePartnerRepository cooperativePartnerRepository;
 
+    @Autowired
+    CheckRepository checkRepository;
+
+    @Autowired
+    ProductCheckRepository productCheckRepository;
+
+    @Autowired
+    LvWangCheckRepository lvWangCheckRepository;
+
     @Override
     public Map<String, Object> getShouyeInfos() {
         Map<String,Object> map=new HashMap<>();
@@ -67,7 +76,9 @@ public class IndexServiceImpl implements IndexService {
         //专利
         List<Patent> patentList=patentRepository.findAll();
         map.put("patentList",patentList);
-
+        //检测
+        List<Check> checkList=checkRepository.findAll();
+        map.put("checkList",checkList);
         //价格
         List<Price> priceList=priceRepository.findAll();
         map.put("priceList",priceList);
@@ -94,60 +105,25 @@ public class IndexServiceImpl implements IndexService {
         return  map;
     }
 
+    //产品整体检测
     @Override
-    public List<Subtitle> getSliderInfo() {
-        return subTitleRepository.findAll();
+    public Map<String, Object> getProductCheckInfos() {
+        Map<String,Object> map=new HashMap<>();
+        List<ProductCheck> productCheckList=productCheckRepository.findAll();
+        map.put("productCheckList",productCheckList);
+        return map;
     }
 
+    //滤网检测
     @Override
-    public List<Theme> getThemeInfo() {
-        return themeRepository.findAll();
+    public Map<String, Object> getLvWangCheckInfos() {
+        Map<String,Object> map=new HashMap<>();
+        List<LvWangCheck> lvWangCheckList=lvWangCheckRepository.findAll();
+        map.put("lvWangCheckList",lvWangCheckList);
+        return map;
     }
 
-    @Override
-    public List<ThreeModule> getThreeModuleInfo() {
-        return threeModuleRepository.findAll();
-    }
 
-    @Override
-    public List<OxygenIons> getOxygenIonsInfo() {
-        return oxygenIonsRepository.findAll();
-    }
-
-    @Override
-    public List<Advantage> getAdvantageInfo() {
-        return advantageRepository.findAll();
-    }
-
-    @Override
-    public List<Patent> getPatentInfo() {
-        return patentRepository.findAll();
-    }
-
-    @Override
-    public List<Price> getPriceInfo() {
-        return priceRepository.findAll();
-    }
-
-    @Override
-    public List<SystemComparison> getSystemComparisonInfo() {
-        return systemComparisonRepository.findAll();
-    }
-
-    @Override
-    public List<BrandComparison> getBrandComparisonInfo() {
-        return brandComparisonRepository.findAll();
-    }
-
-    @Override
-    public Company getCompanyInfo() {
-        return companyRepository.findAll().get(0);
-    }
-
-    @Override
-    public List<CooperativePartner> getCooperativePartnerInfo() {
-        return cooperativePartnerRepository.findAll();
-    }
 
 
 }

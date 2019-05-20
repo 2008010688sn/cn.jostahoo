@@ -1,9 +1,6 @@
 package cn.jostahoo.front_site.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
@@ -36,7 +33,7 @@ public class BrandComparison implements Serializable {
     Boolean isOzone;
 
     //是否高负氧离子
-    boolean isOxygenIons;
+    Integer isOxygenIons;
 
     //噪音
     String noise;

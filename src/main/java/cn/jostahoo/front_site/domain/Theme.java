@@ -21,7 +21,7 @@ public class Theme implements Serializable {
 
     //描述
     @Column
-    String desc;
+    String tdesc;
 
     //更多
     @Column

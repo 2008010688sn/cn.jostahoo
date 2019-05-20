@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class IndexController {
@@ -14,61 +15,29 @@ public class IndexController {
     @Autowired
     IndexService indexService;
 
-    @GetMapping(value = "/slider")
-    public List<Subtitle> getSliderInfo(){
-        return indexService.getSliderInfo();
-    }
+    @GetMapping(value = "/shouye")
+    //首页显示信息
+    public Map<String,Object> getShouyeInfos(){
+        return indexService.getShouyeInfos();
+    };
 
-    @GetMapping(value = "/theme")
-    public List<Theme> getThemeInfo(){
-        return indexService.getThemeInfo();
-    }
+    @GetMapping(value = "/productComparison")
+    //获取产品对比信息
+    public Map<String,Object> getProductComparison(){
+        return indexService.getProductComparison();
+    };
 
-    @GetMapping(value = "/threeModule")
-    public List<ThreeModule> getThreeModuleInfo(){
-        return indexService.getThreeModuleInfo();
-    }
+    @GetMapping(value = "/productCheckInfos")
+    //产品整体检测信息
+    public Map<String,Object> getProductCheckInfos(){
+        return indexService.getProductCheckInfos();
+    };
 
-    @GetMapping(value = "/oxygenIons")
-    public List<OxygenIons> getOxygenIonsInfo(){
-        return indexService.getOxygenIonsInfo();
-    }
-
-    @GetMapping(value = "/advantage")
-    public List<Advantage> getAdvantageInfo(){
-        return indexService.getAdvantageInfo();
-    }
-
-    @GetMapping(value = "/patent")
-    public List<Patent> getPatentInfo(){
-        return indexService.getPatentInfo();
-    }
-
-
-    @GetMapping(value = "/price")
-    public List<Price> getPriceInfo(){
-        return indexService.getPriceInfo();
-    }
-
-    @GetMapping(value = "/systemComparison")
-    public List<SystemComparison> getSystemComparisonInfo(){
-        return indexService.getSystemComparisonInfo();
-    }
-
-    @GetMapping(value = "/brandComparison")
-    public List<BrandComparison> getBrandComparisonInfo(){
-        return indexService.getBrandComparisonInfo();
-    }
-
-    @GetMapping(value = "/company")
-    public Company getCompanyInfo(){
-        return indexService.getCompanyInfo();
-    }
-
-    @GetMapping(value = "/brandComparison")
-    public List<CooperativePartner> getCooperativePartnerInfo(){
-        return indexService.getCooperativePartnerInfo();
-    }
+    @GetMapping(value = "/lvWangCheckInfos")
+    //滤网检测
+    public Map<String,Object> getLvWangCheckInfos(){
+        return indexService.getLvWangCheckInfos();
+    };
 
 
 

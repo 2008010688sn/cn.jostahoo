@@ -20,7 +20,7 @@ public class Company implements Serializable {
     String name;
 
     //描述
-    String desc;
+    String cdesc;
 
     //口号
     @Column

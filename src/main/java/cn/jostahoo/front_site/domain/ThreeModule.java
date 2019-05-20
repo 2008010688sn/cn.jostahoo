@@ -19,7 +19,7 @@ public class ThreeModule implements Serializable {
     @Column
     String title;
 
-    String desc;
+    String tmdesc;
 
 
 }

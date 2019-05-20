@@ -7,39 +7,18 @@ import java.util.Map;
 
 public interface IndexService {
 
-
+//首页显示信息
    public Map<String,Object> getShouyeInfos();
-    //首页滚动
-    public List<Subtitle> getSliderInfo();
 
-    //三大主题
-    public List<Theme> getThemeInfo();
+    //获取产品对比信息
+    public Map<String,Object> getProductComparison();
 
-    //三大模块
-    public List<ThreeModule> getThreeModuleInfo();
+    //产品整体检测信息
+    public Map<String,Object> getProductCheckInfos();
 
-    //负氧离子
-    public List<OxygenIons> getOxygenIonsInfo();
+    //滤网检测
+    public Map<String,Object> getLvWangCheckInfos();
 
-    //优点
-    public List<Advantage> getAdvantageInfo();
 
-    //专利
-    public List<Patent> getPatentInfo();
-
-    //价格
-    public List<Price> getPriceInfo();
-
-    //不同系统对比
-    public List<SystemComparison> getSystemComparisonInfo();
-
-    //不同品牌对比
-    public List<BrandComparison> getBrandComparisonInfo();
-
-    //公司介绍
-    public Company getCompanyInfo();
-
-    //或作伙伴
-    public List<CooperativePartner> getCooperativePartnerInfo();
 
 }
